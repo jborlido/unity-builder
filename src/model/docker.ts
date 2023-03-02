@@ -60,6 +60,7 @@ class Docker {
             --volume "${actionFolder}/platforms/ubuntu/steps:/steps:z" \
             --volume "${actionFolder}/platforms/ubuntu/entrypoint.sh:/entrypoint.sh:z" \
             --volume "${actionFolder}/unity-config:/usr/share/unity3d/config/:z" \
+            --volume "/home/kronos/docker/il2cpp.runtimeconfig.json:/opt/unity/Editor/Data/il2cpp/build/deploy/netcoreapp3.1/il2cpp.runtimeconfig.json:z" \
             ${sshAgent ? `--volume ${sshAgent}:/ssh-agent` : ''} \
             ${sshAgent ? '--volume /home/runner/.ssh/known_hosts:/root/.ssh/known_hosts:ro' : ''} \
             ${entrypointBash ? `--entrypoint ${commandPrefix}` : ``} \
