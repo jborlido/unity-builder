@@ -77,6 +77,8 @@ class BuildParameters {
   public cacheUnityInstallationOnMac!: boolean;
   public unityHubVersionOnMac!: string;
 
+  public dockerMemoryLimit!: string;
+
   static async create(): Promise<BuildParameters> {
     const buildFile = this.parseBuildFile(Input.buildName, Input.targetPlatform, Input.androidExportType);
     const editorVersion = UnityVersioning.determineUnityVersion(Input.projectPath, Input.unityVersion);
@@ -178,6 +180,7 @@ class BuildParameters {
       githubChecks: CloudRunnerOptions.githubChecks,
       cacheUnityInstallationOnMac: Input.cacheUnityInstallationOnMac,
       unityHubVersionOnMac: Input.unityHubVersionOnMac,
+      dockerMemoryLimit: Input.dockerMemoryLimit,
     };
   }
 

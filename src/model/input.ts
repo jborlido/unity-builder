@@ -214,6 +214,12 @@ class Input {
     return input !== '' ? input : '';
   }
 
+  static get dockerMemoryLimit() {
+    const input = Input.getInput('dockerMemoryLimit') || '';
+
+    return input !== '' ? input : '';
+  }
+
   public static ToEnvVarFormat(input: string) {
     if (input.toUpperCase() === input) {
       return input;

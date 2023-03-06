@@ -207,6 +207,11 @@ inputs:
     description:
       'The version of Unity Hub to install on MacOS (e.g. 3.4.0). Defaults to latest available on brew if empty string
       or nothing is specified.'
+  dockerMemoryLimit:
+    default: '2g'
+    required: false
+    description:
+      'The limit of memory which the docker container can use'
 
 outputs:
   volume:
