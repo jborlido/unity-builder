@@ -35,7 +35,7 @@ unity-editor \
   -executeMethod "$STATIC_METHOD" \
   180 \
   1 \
-  $GITHUB_WORKSPACE/ci/python_tools/azure-image-updater/source-images/items
+  "$GITHUB_WORKSPACE/ci/python_tools/azure-image-updater/source-images/items"
 
 # Catch exit code
 BUILD_EXIT_CODE=$?
@@ -77,4 +77,4 @@ echo "#       Build output      #"
 echo "###########################"
 echo ""
 
-ls -alh "$BUILD_PATH_FULL"
+ls -alh "$GITHUB_WORKSPACE/ci/python_tools/azure-image-updater/source-images/items"
