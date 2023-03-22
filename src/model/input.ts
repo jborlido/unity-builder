@@ -220,6 +220,18 @@ class Input {
     return input !== '' ? input : '';
   }
 
+  static get isBuild() {
+    const input = Input.getInput('isBuild') || false;
+
+    return input === 'true';
+  }
+
+  static get staticMethod() {
+    const input = Input.getInput('staticMethod') || '';
+
+    return input !== '' ? input : '';
+  }
+
   public static ToEnvVarFormat(input: string) {
     if (input.toUpperCase() === input) {
       return input;

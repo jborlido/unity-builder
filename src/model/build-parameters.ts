@@ -78,6 +78,8 @@ class BuildParameters {
   public unityHubVersionOnMac!: string;
 
   public dockerMemoryLimit!: string;
+  public isBuild!: boolean;
+  public staticMethod!: string;
 
   static async create(): Promise<BuildParameters> {
     const buildFile = this.parseBuildFile(Input.buildName, Input.targetPlatform, Input.androidExportType);
@@ -181,6 +183,8 @@ class BuildParameters {
       cacheUnityInstallationOnMac: Input.cacheUnityInstallationOnMac,
       unityHubVersionOnMac: Input.unityHubVersionOnMac,
       dockerMemoryLimit: Input.dockerMemoryLimit,
+      isBuild: Input.isBuild,
+      staticMethod: Input.staticMethod,
     };
   }
 

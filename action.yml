@@ -210,8 +210,15 @@ inputs:
   dockerMemoryLimit:
     default: '2g'
     required: false
-    description:
-      'The limit of memory which the docker container can use'
+    description: 'The limit of memory which the docker container can use.'
+  isBuild:
+    default: 'true'
+    required: false
+    description: 'Disable this if you want to run a static method, enable if you want to perform a normal build.'
+  staticMethod:
+    default: ''
+    required: false
+    description: 'The static method you want to run instead of running the normal build process.'
 
 outputs:
   volume:
