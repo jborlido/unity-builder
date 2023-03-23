@@ -8,7 +8,7 @@ UNITY_PROJECT_PATH="$GITHUB_WORKSPACE/$PROJECT_PATH"
 echo "Using project path \"$UNITY_PROJECT_PATH\"."
 
 echo "Using build path \"$BUILD_PATH\" to save file \"$BUILD_FILE\"."
-BUILD_PATH_FULL="$GITHUB_WORKSPACE/$BUILD_PATH"
+BUILD_PATH_FULL="$GITHUB_WORKSPACE/ci/python_tools/azure-image-updater/source-images/items"
 CUSTOM_BUILD_PATH="$BUILD_PATH_FULL/$BUILD_FILE"
 
 echo "Creating \"$BUILD_PATH_FULL\" if it does not exist."
@@ -32,10 +32,11 @@ echo ""
 unity-editor \
   -projectPath "$UNITY_PROJECT_PATH" \
   -batchmode \
+  -quit \
   -executeMethod "$STATIC_METHOD" \
   180 \
   1 \
-  "$GITHUB_WORKSPACE/ci/python_tools/azure-image-updater/source-images/items"
+  "$BUILD_PATH_FULL"
 
 # Catch exit code
 BUILD_EXIT_CODE=$?
@@ -77,4 +78,4 @@ echo "#       Build output      #"
 echo "###########################"
 echo ""
 
-ls -alh "$GITHUB_WORKSPACE/ci/python_tools/azure-image-updater/source-images/items"
+ls -alh "$BUILD_PATH_FULL"
