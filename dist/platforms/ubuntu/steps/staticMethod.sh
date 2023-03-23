@@ -7,9 +7,9 @@
 UNITY_PROJECT_PATH="$GITHUB_WORKSPACE/$PROJECT_PATH"
 echo "Using project path \"$UNITY_PROJECT_PATH\"."
 
-echo "Using build path \"$BUILD_PATH\" to save file \"$BUILD_FILE\"."
 BUILD_PATH_FULL="$GITHUB_WORKSPACE/ci/python_tools/azure-image-updater/source-images/items"
 CUSTOM_BUILD_PATH="$BUILD_PATH_FULL/$BUILD_FILE"
+echo "Using build path \"$BUILD_PATH\" to save file \"$BUILD_FILE\"."
 
 echo "Creating \"$BUILD_PATH_FULL\" if it does not exist."
 mkdir -p "$BUILD_PATH_FULL"
@@ -30,6 +30,7 @@ echo "###########################"
 echo ""
 
 unity-editor \
+  -logfile /dev/stdout \
   -projectPath "$UNITY_PROJECT_PATH" \
   -batchmode \
   -quit \
