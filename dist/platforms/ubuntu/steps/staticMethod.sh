@@ -32,8 +32,6 @@ echo ""
 unity-editor \
   -logfile /dev/stdout \
   -projectPath "$UNITY_PROJECT_PATH" \
-  -batchmode \
-  -quit \
   -executeMethod "$STATIC_METHOD" \
   180 \
   1 \
