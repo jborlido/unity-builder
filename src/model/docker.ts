@@ -62,7 +62,7 @@ class Docker {
             --env IS_BUILD=${isBuild} \
             --env STATIC_METHOD=${staticMethod} \
             ${dockerMemoryLimit ? `--memory="${dockerMemoryLimit}g"` : ``} \
-            --cpu-shares=7168
+            --cpu-shares=7168 \
             ${gitPrivateToken ? `--env GIT_PRIVATE_TOKEN="${gitPrivateToken}"` : ''} \
             ${sshAgent ? '--env SSH_AUTH_SOCK=/ssh-agent' : ''} \
             --volume "${githubHome}":"/root:z" \
