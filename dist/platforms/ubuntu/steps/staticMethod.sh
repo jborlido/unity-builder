@@ -33,7 +33,7 @@ unity-editor \
   -logfile /dev/stdout \
   -projectPath "$UNITY_PROJECT_PATH" \
   -executeMethod "$STATIC_METHOD" \
-  180 \
+  90 \
   1 \
   "$BUILD_PATH_FULL"
 
