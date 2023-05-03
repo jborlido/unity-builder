@@ -219,7 +219,14 @@ inputs:
     default: ''
     required: false
     description: 'The static method you want to run instead of running the normal build process.'
-
+  buildAppBundle:
+    default: 'false'
+    required: false
+    description: 'Set this to true if you want to build an aab instead of an apk.'
+  developmentBuild:
+    default: 'true'
+    required: false
+    description: 'Tells whether the package should be built as a development build or a production build.'
 outputs:
   volume:
     description: 'The Persistent Volume (PV) where the build artifacts have been stored by Kubernetes'

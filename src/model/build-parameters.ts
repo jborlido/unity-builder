@@ -80,6 +80,8 @@ class BuildParameters {
   public dockerMemoryLimit!: string;
   public isBuild!: boolean;
   public staticMethod!: string;
+  public buildAppBundle!: boolean;
+  public developmentBuild!: boolean;
 
   static async create(): Promise<BuildParameters> {
     const buildFile = this.parseBuildFile(Input.buildName, Input.targetPlatform, Input.androidExportType);
@@ -185,6 +187,8 @@ class BuildParameters {
       dockerMemoryLimit: Input.dockerMemoryLimit,
       isBuild: Input.isBuild,
       staticMethod: Input.staticMethod,
+      buildAppBundle: Input.buildAppBundle,
+      developmentBuild: Input.developmentBuild,
     };
   }
 

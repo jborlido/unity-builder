@@ -45,6 +45,8 @@ class Docker {
       dockerMemoryLimit,
       isBuild,
       staticMethod,
+      buildAppBundle,
+      developmentBuild,
     } = parameters;
 
     const githubHome = path.join(runnerTempPath, '_github_home');
@@ -61,6 +63,8 @@ class Docker {
             --env GITHUB_WORKSPACE=/github/workspace \
             --env IS_BUILD=${isBuild} \
             --env STATIC_METHOD=${staticMethod} \
+            --env BUILD_APP_BUNDLE=${buildAppBundle} \
+            --env DEVELOPMENT_BUILD=${developmentBuild} \
             ${dockerMemoryLimit ? `--memory="${dockerMemoryLimit}g"` : ``} \
             --cpus="7" \
             ${gitPrivateToken ? `--env GIT_PRIVATE_TOKEN="${gitPrivateToken}"` : ''} \

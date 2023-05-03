@@ -232,6 +232,18 @@ class Input {
     return input !== '' ? input : '';
   }
 
+  static get buildAppBundle() {
+    const input = Input.getInput('buildAppBundle') || '';
+
+    return input === 'true';
+  }
+
+  static get developmentBuild() {
+    const input = Input.getInput('developmentBuild') || '';
+
+    return input === 'true';
+  }
+
   public static ToEnvVarFormat(input: string) {
     if (input.toUpperCase() === input) {
       return input;
