@@ -66,7 +66,7 @@ class Docker {
             --env STATIC_METHOD=${staticMethod} \
             --env BUILD_APP_BUNDLE=${buildAppBundle} \
             --env DEVELOPMENT_BUILD=${developmentBuild} \
-            --env KEY_ALIAS=${keystoreAlias} \
+            --env KEY_ALIAS="${keystoreAlias}" \
             ${dockerMemoryLimit ? `--memory="${dockerMemoryLimit}g"` : ``} \
             --cpus="7" \
             ${gitPrivateToken ? `--env GIT_PRIVATE_TOKEN="${gitPrivateToken}"` : ''} \
