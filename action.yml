@@ -227,6 +227,10 @@ inputs:
     default: 'true'
     required: false
     description: 'Tells whether the package should be built as a development build or a production build.'
+  keystoreAlias:
+    default: ''
+    required: false
+    description: 'The keystore profile alias to be used on the build.'
 outputs:
   volume:
     description: 'The Persistent Volume (PV) where the build artifacts have been stored by Kubernetes'

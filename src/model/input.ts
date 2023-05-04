@@ -244,6 +244,12 @@ class Input {
     return input === 'true';
   }
 
+  static get keystoreAlias() {
+    const input = Input.getInput('keystoreAlias') || '';
+
+    return input !== '' ? input : '';
+  }
+
   public static ToEnvVarFormat(input: string) {
     if (input.toUpperCase() === input) {
       return input;

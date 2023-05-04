@@ -82,6 +82,7 @@ class BuildParameters {
   public staticMethod!: string;
   public buildAppBundle!: boolean;
   public developmentBuild!: boolean;
+  public keystoreAlias!: string;
 
   static async create(): Promise<BuildParameters> {
     const buildFile = this.parseBuildFile(Input.buildName, Input.targetPlatform, Input.androidExportType);
@@ -189,6 +190,7 @@ class BuildParameters {
       staticMethod: Input.staticMethod,
       buildAppBundle: Input.buildAppBundle,
       developmentBuild: Input.developmentBuild,
+      keystoreAlias: Input.keystoreAlias,
     };
   }
 
